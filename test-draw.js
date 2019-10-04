@@ -21,4 +21,8 @@ system.addStave({
 
 }).addClef('treble');
 
+system.addStave({
+    voices: [ score.voice(score.notes('C5/q'))]
+}).addClef('treble');
+
 vf.draw();

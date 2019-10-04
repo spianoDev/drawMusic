@@ -19,6 +19,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "hbs": "^4.0.5",
+    "method-override": "^3.0.0",
     "mongoose": "^5.7.3",
     "vexflow": "^1.2.89"
   }
