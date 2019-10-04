@@ -1,16 +1,16 @@
 const express = require('express');
-const hbs = require('hbs');
+// const hbs = require('hbs');
 const notesController = require('./controllers/notes');
 const scoresController = require('./controllers/scores');
 const parser = require('body-parser');
-const methodOverride = require('method-override');
+// const methodOverride = require('method-override');
 const app = express();
 
-app.set('view engine', 'hbs');
+// app.set('view engine', 'hbs');
 app.use(parser.urlencoded({ extended: true }));
 app.use(parser.json());
-app.use(methodOverride("_method"));
-app.use("/assets", express.static('public'));
+// app.use(methodOverride("_method"));
+// app.use("/assets", express.static('public'));
 
 app.get("/", (req, res) => {
     res.redirect("/notes");

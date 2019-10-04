@@ -1,5 +1,9 @@
 [
   {
+    "clef": "treble",
+    "time_signature": 4,
+    "key": "Key of C",
+    "notes": ["C5"]
 
   }
 ]
