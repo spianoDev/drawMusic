@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const ScoreSchema = new mongoose.Schema({
     clef: { type: String, default: 'treble' },
-    time_signature: Number,
+    time_signature: String,
     key: String,
     notes: { type: [String], max: 4 }
 });

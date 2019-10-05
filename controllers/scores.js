@@ -45,6 +45,7 @@ router.put('/:id', (req, res) => {
             console.log(addNote.pitch);
             updateNote.notes.push(addNote.pitch);
             newNote.save();
+            updateNote.save();
             res.json(newNote);
             console.log(updateNote);
         })

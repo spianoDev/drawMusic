@@ -1,7 +1,35 @@
 [
   {
-    "pitch": "C5/",
-    "rhythm": "q",
+    "pitch": "C5",
+    "rhythm": "/q",
+    "accidentals": "",
+    "rest": "false"
+
+  },
+  {
+    "pitch": "D5",
+    "rhythm": "/q",
+    "accidentals": "",
+    "rest": "false"
+
+  },
+  {
+    "pitch": "E5",
+    "rhythm": "/q",
+    "accidentals": "",
+    "rest": "false"
+
+  },
+  {
+    "pitch": "F5",
+    "rhythm": "/q",
+    "accidentals": "",
+    "rest": "false"
+
+  },
+  {
+    "pitch": "G5",
+    "rhythm": "/q",
     "accidentals": "",
     "rest": "false"
 
