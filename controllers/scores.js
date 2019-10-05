@@ -37,17 +37,19 @@ router.post('/', (req, res) => {
 // update a note inside a score
 router.put('/:id', (req, res) => {
     const scoreId = req.params.id;
-    const addNote = req.body;
-    Score.findByIdAndUpdate({ _id: scoreId}, req.body.pitch).then(updateNote => {
-        Note.create(addNote).then(newNote => {
-            console.log(updateNote);
-            console.log(updateNote.notes);
+    const takeNote = req.body.id;
+    Score.findByIdAndUpdate({ _id: scoreId}, req.body.pitch, req.body.rhythm).then(updateNote => {
+        Note.findOne({ _id: takeNote}).then(addNote => {
+            console.log(addNote);
             console.log(addNote.pitch);
-            updateNote.notes.push(addNote.pitch);
-            newNote.save();
-            updateNote.save();
-            res.json(newNote);
-            console.log(updateNote);
+            console.log(addNote.rhythm);
+            console.log(addNote.pitch + addNote.rhythm);
+            //console.log(takeNote.pitch.rhythm);
+            updateNote.notes.push(addNote.pitch + addNote.rhythm);
+           //newNote.save();
+           updateNote.save();
+           res.json(updateNote);
+          console.log(updateNote);
         })
     })
 });

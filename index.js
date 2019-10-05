@@ -4,7 +4,10 @@ const notesController = require('./controllers/notes');
 const scoresController = require('./controllers/scores');
 const parser = require('body-parser');
 const methodOverride = require('method-override');
+
 const app = express();
+// to allow the music notes to render
+
 
 app.set('view engine', 'hbs');
 app.use(parser.urlencoded({ extended: true }));
@@ -13,7 +16,6 @@ app.use(methodOverride("_method"));
 app.use("/assets", express.static('public'));
 
 app.get("/", (req, res) => {
-    //res.redirect("/notes");
     res.render('index', { pitch: req.params.pitch })
 });
 

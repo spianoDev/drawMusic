@@ -1,6 +1,8 @@
 <h1> My New Song </h1>
 
-<input type="submit" id="score" onclick="writeNote()" value="Make a score">
+<input type="submit" id="score" onclick="writeNote({{score.time_signature}}{{#each note}}{{this
+.pitch}}{{this.rhythm}}{{/each}}{{score.clef}})"
+       value="Make a score">
 
 <div id="new-song">
 
