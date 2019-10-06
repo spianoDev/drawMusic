@@ -5,13 +5,17 @@ const Note = require('../models/Note');
 
 router.get("/", (req, res) => {
     Note.find({}).then(notes => {
-        console.log(req.body);
-        res.json(notes)
+        console.log(notes);
+        // res.json(notes)
+        res.render("index", {notes})
     });
 });
 router.get('/:id', (req, res) => {
-    Note.findOne( { _id: req.params.id }, req.body)
-        .then(note => res.json(note));
+    Note.findOne( { _id: req.params.id })
+        .then(note =>
+            // res.json(note)
+    res.render("showNotes", note)
+);
 });
 
 router.post('/', (req, res) => {

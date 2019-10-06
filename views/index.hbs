@@ -1,9 +1,18 @@
 <h1> My New Song </h1>
-
-<input type="submit" id="score" onclick="writeNote({{score.time_signature}}{{#each note}}{{this
-.pitch}}{{this.rhythm}}{{/each}}{{score.clef}})"
+<!--the onclick doesn't work with the function-->
+<input type="submit" id="score" onclick="writeNote({{pitch}}{{rhythm}})"
        value="Make a score">
 
+<ul>
+    {{#each notes}}
+        <li>
+<a href="/notes/{{this.id}}" >
+{{this.pitch}}
+
+            </a>
+        </li>
+    {{/each}}
+</ul>
 <div id="new-song">
 
 

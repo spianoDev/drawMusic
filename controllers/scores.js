@@ -12,7 +12,9 @@ router.get("/", (req, res) => {
 });
 router.get('/:id', (req, res) => {
     Score.findOne( { _id: req.params.id }, req.body)
-        .then(score => res.json(score));
+        .then(score =>
+            // res.json(score));
+            res.render("showScoreNotes", score));
 });
 router.post('/', (req, res) => {
     Score.create(req.body).then(newScore => res.json(newScore));

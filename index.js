@@ -6,8 +6,16 @@ const parser = require('body-parser');
 const methodOverride = require('method-override');
 
 const app = express();
-// to allow the music notes to render
+// to allow the music notes to render with handlebars helper
+// https://github.com/ericf/express-handlebars#helpers
+// https://stackoverflow.com/questions/32707322/how-to-make-a-handlebars-helper-global-in-expressjs/42224612#42224612
 
+// let hbsHelpers = hbs.create({
+//     helpers: require("./public/music.js").helpers,
+//     defaultLayout: 'layout',
+//     extname: '.hbs'
+// });
+// app.engine('.hbs', hbsHelpers.engine);
 
 app.set('view engine', 'hbs');
 app.use(parser.urlencoded({ extended: true }));
