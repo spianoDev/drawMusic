@@ -6,15 +6,18 @@ const Note = require('../models/Note');
 
 router.get("/", (req, res) => {
     Score.find({}).then(scores => {
-        console.log(req.body);
-        res.json(scores);
-    })
+        console.log(scores);
+        // res.json(scores)
+        res.render("songs", {scores})
+    });
 });
 router.get('/:id', (req, res) => {
     Score.findOne( { _id: req.params.id }, req.body)
-        .then(score =>
+        .then(score => {
             // res.json(score));
-            res.render("showScoreNotes", score));
+            console.log(req.body);
+            res.render("songNotes", score)
+        });
 });
 router.post('/', (req, res) => {
     Score.create(req.body).then(newScore => res.json(newScore));

@@ -7,16 +7,17 @@ let vf = new Vex.Flow.Factory({
 
 let score = vf.EasyScore();
 let system = vf.System();
-// function writeNote(time_signature, notesArray, clef) {
-//     document.getElementById('score');
-//     score.set({time: time_signature});
-// // in order to render the drawing, I will need to increment the time with each additional note value.
-//     system.addStave({
-//         voices: [score.voice(score.notes(notesArray))]
-//     }).addClef(clef);
-//
-//     vf.draw();
-// }
+function writeScore(numNotes, notesArray, clef) {
+    document.getElementById('score');
+    score.set({time: `${numNotes}/4`});
+    console.log(notesArray);
+// in order to render the drawing, I will need to increment the time with each additional note value.
+    system.addStave({
+        voices: [score.voice(score.notes(notesArray))]
+    }).addClef(clef);
+
+    vf.draw();
+}
 //Handlebars.registerHelper("writeNote", function(pitch, rhythm) {
 function writeNote(pitch, rhythm){
     document.getElementById('score');

@@ -1,8 +1,23 @@
 [
   {
+    "name": "Twinkle",
     "clef": "treble",
-    "time_signature": "5/4",
+    "time_signature": 8,
     "key": "Key of C",
-    "notes": []
+    "notes": ["C4/q", "C4/q", "G4/q", "G4/q", "A4/q", "A4/q", "G4/h"]
+  },
+  {
+    "name": "Mary",
+    "clef": "treble",
+    "time_signature": 8,
+    "key": "Key of C",
+    "notes": ["E4/q", "D4/q", "C4/q", "D4/q", "E4/q", "E4/q", "E4/h"]
+  },
+  {
+    "name": "Happy Birthday",
+    "clef": "treble",
+    "time_signature": 6,
+    "key": "Key of C",
+    "notes": ["G4/8", "G4/8", "A4/q", "G4/q", "C5/q", "B4/h"]
   }
 ]

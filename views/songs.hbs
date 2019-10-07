@@ -1,0 +1,10 @@
+<h2> Songs</h2>
+<ul>
+    {{#each scores}}
+        <li>
+            <a href="/scores/{{this.id}}" >
+                {{this.name}}
+            </a>
+        </li>
+    {{/each}}
+</ul>
