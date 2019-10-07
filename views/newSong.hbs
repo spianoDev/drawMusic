@@ -3,19 +3,14 @@
 <h2> Build a new Treble Clef Song </h2>
 
 
-<form action="/scores/newSong" method="post">
-    <p>
-        <label>Name Your Song</label>
-        <input class="input" type="text" name="name" required placeholder=""/>
-        <label>Number of Beats</label>
-        <input class="input" type="text" name="time_signature" required placeholder="Enter a whole number"/>
-    </p>
-    <h2> Add the pitches and rhythms </h2>
+<form action="/scores" method="post">
+
+    <h2> Add the pitches and rhythms for your song (must do this first!) </h2>
     <h3>Please remember that the Treble Clef notes range from A3 through C6</h3>
     <h3> Rhythm may be entered as 'h' for half note, 'q' for quarter note, and 8 for eighth notes</h3>
       <p >
         <label>Pitch</label>
-        <input id="pitch" class="input" type="text" name="pitch" required placeholder="Ex: G5"/>
+        <input id="pitch" class="input" type="text" name="pitch"  placeholder="Ex: G5"/>
         <label>Rhythm</label>
         <input id="rhythm" class="input" type="text" name="rhythm" placeholder="Ex: /q "/>
           <input id="add-note" class="button" type="submit" value="Add this Note"
@@ -24,6 +19,12 @@
     <ul id="note-array">
 
     </ul>
+    <p>
+        <label>Add a Name for Your Song</label>
+        <input class="input" type="text" name="name" required placeholder=""/>
+        <label>Count up the total number of beats (make sure you don't have any half beats)</label>
+        <input class="input" type="text" name="time_signature" required placeholder="Enter a whole number"/>
+    </p>
 
     <input class="button" type="submit" value="Add this Song" />
 </form>

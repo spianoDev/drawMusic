@@ -39,6 +39,7 @@ router.delete("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
     Score.create(req.body).then(newScore => {
+        req.body.notes.filter(input => {return input.length > 0});
         Note.create(req.body).then(newNote => {
             newScore.notes.push(newNote.pitch + newNote.rhythm);
             newScore.save();
@@ -66,20 +67,22 @@ router.post("/", (req, res) => {
 // update a note inside a score
 router.put('/edit/:id', (req, res) => {
     const scoreId = req.params.id;
-    const takeNote = req.body.id;
-    Score.findByIdAndUpdate({ _id: scoreId}, req.body.pitch, req.body.rhythm).then(updateNote => {
-        Note.findOne({ _id: takeNote}).then(addNote => {
-            console.log(addNote);
-            console.log(addNote.pitch);
-            console.log(addNote.rhythm);
-            console.log(addNote.pitch + addNote.rhythm);
-            //console.log(takeNote.pitch.rhythm);
-            updateNote.notes.push(addNote.pitch + addNote.rhythm);
-           //newNote.save();
+    //const takeNote = req.body.id;
+    Score.findByIdAndUpdate({ _id: scoreId}, req.body.time_signature)
+        .then(updateNote => {
+        // Note.findAndModify(req.body).then(addNote => {
+        //     console.log(req.body);
+        //     console.log(addNote);
+        //     console.log(addNote.pitch);
+        //     console.log(addNote.rhythm);
+        //     console.log(addNote.pitch + addNote.rhythm);
+        //     //console.log(takeNote.pitch.rhythm);
+        //     updateNote.notes.push(addNote.pitch + addNote.rhythm);
+        //    //newNote.save();
            updateNote.save();
-           res.json(updateNote);
+           res.redirect('/scores');
           console.log(updateNote);
-        })
+        // })
     })
 });
 
