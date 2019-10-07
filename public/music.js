@@ -58,18 +58,20 @@ function writeNote(pitch, rhythm){
 
 // function to add a note and rhythm to the newSong array
 //https://www.w3schools.com/jsref/met_node_appendchild.asp
+// With some help from Nathaniel, I was able to modify this function slightly to take in each item as a separate input
 
 function addNote() {
     document.getElementById('add-note');
     let pitch = document.getElementById('pitch').value;
     let rhythm = document.getElementById('rhythm').value;
     let nextNote = document.createElement('li');
-    let noteText = document.createTextNode(`${pitch}${rhythm}`);
-    //notesOfSong.push(noteText);
-    nextNote.appendChild(noteText);
+    let inputNote = document.createElement('input');
+    inputNote.setAttribute('type', 'text');
+    inputNote.setAttribute('name', 'notes');
+    inputNote.setRangeText(`${pitch}${rhythm}`);
+    nextNote.appendChild(inputNote);
     document.getElementById('note-array').appendChild(nextNote);
     console.log(nextNote);
-    console.log(noteText);
 }
 
 // function writeNote() {

@@ -2,7 +2,7 @@
 
 <form action="/scores/edit/{{id}}?_method=put" method="post">
     <p>
-        <label>Name Your Song</label>
+        <label>Edit Song Name</label>
         <input class="input" type="text" name="name" value="{{name}}" placeholder=""/>
         <label>Number of Beats</label>
         <input class="input" type="text" name="time_signature" value="{{time_signature}}" placeholder="Enter a whole
@@ -13,7 +13,7 @@ number"/>
     <h3> Rhythm may be entered as 'h' for half note, 'q' for quarter note, and 8 for eighth notes</h3>
     <p >
         <label>Pitch</label>
-        <input id="pitch" class="input" type="text" name="pitch" required placeholder="Ex: G5"/>
+        <input id="pitch" class="input" type="text" name="pitch" placeholder="Ex: G5"/>
         <label>Rhythm</label>
         <input id="rhythm" class="input" type="text" name="rhythm" placeholder="Ex: /q "/>
         <input id="add-note" class="button" type="submit" value="Add this Note"
