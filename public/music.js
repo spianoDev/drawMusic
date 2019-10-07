@@ -7,13 +7,14 @@ let vf = new Vex.Flow.Factory({
 
 let score = vf.EasyScore();
 let system = vf.System();
+let notesOfSong = [];
 // Tried to beam the eighth notes, but it was getting too complicated.
 // let beams = vf.Beam.generateBeams(notes);
 // Vex.Flow.Formatter.FormatAndDraw(vf, system, notes);
 // beams.forEach(function(beam) {
 //     beam.setContext(vf).draw();
 // });
-
+// function to create banked songs
 function writeScore(numBeats, notesArray, clef) {
     document.getElementById('score');
     score.set({time: `${numBeats}/4`});
@@ -27,10 +28,18 @@ function writeScore(numBeats, notesArray, clef) {
         system.addStave({
             voices: [score.voice(score.notes(notesArray))]
         }).addClef(clef).addTimeSignature("4/4");
+    } else if (numBeats % 5 === 0) {
+        system.addStave({
+            voices: [score.voice(score.notes(notesArray))]
+        }).addClef(clef).addTimeSignature("5/4");
+    } else if (numBeats % 2 === 0) {
+        system.addStave({
+            voices: [score.voice(score.notes(notesArray))]
+        }).addClef(clef).addTimeSignature("2/4");
     }
     vf.draw();
 }
-//Handlebars.registerHelper("writeNote", function(pitch, rhythm) {
+// function to create an individual note
 function writeNote(pitch, rhythm){
     document.getElementById('score');
     if (rhythm === '/8') {
@@ -45,6 +54,22 @@ function writeNote(pitch, rhythm){
     }).addClef('treble');
 
     vf.draw();
+}
+
+// function to add a note and rhythm to the newSong array
+//https://www.w3schools.com/jsref/met_node_appendchild.asp
+
+function addNote() {
+    document.getElementById('add-note');
+    let pitch = document.getElementById('pitch').value;
+    let rhythm = document.getElementById('rhythm').value;
+    let nextNote = document.createElement('li');
+    let noteText = document.createTextNode(`${pitch}${rhythm}`);
+    //notesOfSong.push(noteText);
+    nextNote.appendChild(noteText);
+    document.getElementById('note-array').appendChild(nextNote);
+    console.log(nextNote);
+    console.log(noteText);
 }
 
 // function writeNote() {

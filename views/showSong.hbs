@@ -1,0 +1,16 @@
+<h2> {{name}}</h2>
+
+<input type="submit" id="score" onclick="writeScore('{{time_signature}}', '{{notes}}', '{{clef}}')"
+       value="Make this song">
+
+<div id="new-song" >
+
+
+</div>
+<form action="/{{id}}?_method=delete" method="post">
+
+
+    <a href="/edit/{{id}}" class="link">Edit this Song</a>
+
+    <input class="button" type="submit" class="button" value="Delete this Song">
+</form>

@@ -14,12 +14,26 @@ router.get("/", (req, res) => {
 router.get("/newSong", (req, res) => {
     res.render("newSong");
 });
+router.get('/edit/:id', (req, res) => {
+    Score.findOne({ _id: req.params.id })
+        .then(score => {
+            // res.json(score));
+            res.render("editSong", score)
+        });
+});
 router.get('/:id', (req, res) => {
     Score.findOne( { _id: req.params.id }, req.body)
         .then(score => {
             // res.json(score));
             console.log(req.body);
-            res.render("songNotes", score)
+            res.render("showSong", score)
+        });
+});
+router.delete("/:id", (req, res) => {
+    Score.findOneAndDelete({ _id: req.params.id })
+        .then(() => {
+            console.log(req.params.id);
+            res.redirect("/")
         });
 });
 
@@ -69,9 +83,6 @@ router.put('/:id', (req, res) => {
     })
 });
 
-router.delete("/:id", (req, res) => {
-    Score.findOneAndDelete({ _id: req.params.id })
-        .then(deleted => res.json(deleted));
-});
+
 
 module.exports = router;
