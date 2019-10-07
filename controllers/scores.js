@@ -33,7 +33,7 @@ router.delete("/:id", (req, res) => {
     Score.findOneAndDelete({ _id: req.params.id })
         .then(() => {
             console.log(req.params.id);
-            res.redirect("/")
+            res.redirect("/scores")
         });
 });
 
@@ -64,7 +64,7 @@ router.post("/", (req, res) => {
 //     })
 // });
 // update a note inside a score
-router.put('/:id', (req, res) => {
+router.put('/edit/:id', (req, res) => {
     const scoreId = req.params.id;
     const takeNote = req.body.id;
     Score.findByIdAndUpdate({ _id: scoreId}, req.body.pitch, req.body.rhythm).then(updateNote => {

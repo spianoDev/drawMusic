@@ -24,7 +24,7 @@ app.use(methodOverride("_method"));
 app.use("/assets", express.static('public'));
 
 app.get("/", (req, res) => {
-    res.render('index', { pitch: req.params.pitch })
+    res.redirect('/notes');
 });
 
 app.use("/scores", scoresController);
