@@ -11,6 +11,9 @@ router.get("/", (req, res) => {
         res.render("songs", {scores})
     });
 });
+router.get("/newSong", (req, res) => {
+    res.render("newSong");
+});
 router.get('/:id', (req, res) => {
     Score.findOne( { _id: req.params.id }, req.body)
         .then(score => {
@@ -19,11 +22,18 @@ router.get('/:id', (req, res) => {
             res.render("songNotes", score)
         });
 });
-router.post('/', (req, res) => {
-    Score.create(req.body).then(newScore => res.json(newScore));
-});
 
-// router.post('/new', (req, res) => {
+router.post("/", (req, res) => {
+    Score.create(req.body).then(newScore => {
+        Note.create(req.body).then(newNote => {
+            newScore.notes.push(newNote.pitch + newNote.rhythm);
+            newScore.save();
+            console.log(newScore);
+            res.redirect("/scores");
+        })
+    })
+});
+// router.post('/unknown', (req, res) => {
 //
 //     Score.findById(req.params.id).then(addToScore => {
 //         Note.create(req.body.notes).then(newNote => {

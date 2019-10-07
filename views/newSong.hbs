@@ -1,0 +1,18 @@
+<h2> Your Song!</h2>
+
+<h2> Build a new Treble Clef Song </h2>
+<h3>Please remember that the Treble Clef notes range from A3 through C6</h3>
+<h3> Rhythm may be entered as 'h' for half note, 'q' for quarter note, and 8 for eighth notes</h3>
+
+<form action="/scores" method="post">
+    <p>
+        <label>Name Your Song</label>
+        <input class="input" type="text" name="name" required placeholder=""/>
+        <label>Pitch</label>
+        <input class="input" type="text" name="pitch" required placeholder="Ex: G5"/>
+        <label>Rhythm</label>
+        <input class="input" type="text" name="rhythm" placeholder="Ex: /q "/>
+
+    </p>
+    <input class="button" type="submit" value="Add this Song" />
+</form>
