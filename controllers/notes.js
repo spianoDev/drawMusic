@@ -10,6 +10,10 @@ router.get("/", (req, res) => {
         res.render("index", {notes})
     });
 });
+router.get("/newNote", (req, res) => {
+    res.render("newNote");
+    });
+
 router.get('/:id', (req, res) => {
     Note.findOne( { _id: req.params.id })
         .then(note =>
@@ -20,7 +24,10 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     Note.create(req.body)
-        .then(note => res.json(note));
+        .then(note =>
+            //res.json(note)
+            res.redirect('/notes')
+        );
 });
 
 router.put('/:id', (req, res) => {
