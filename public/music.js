@@ -7,7 +7,6 @@ let vf = new Vex.Flow.Factory({
 
 let score = vf.EasyScore();
 let system = vf.System();
-let notesOfSong = [];
 // Tried to beam the eighth notes, but it was getting too complicated.
 // let beams = vf.Beam.generateBeams(notes);
 // Vex.Flow.Formatter.FormatAndDraw(vf, system, notes);
@@ -73,26 +72,12 @@ function addNote() {
     document.getElementById('note-array').appendChild(nextNote);
     console.log(nextNote);
 }
-function deleteNote(noteList){
-    let nix = document.getElementById('noteList');
-    nix.parentNode.removeChild(nix);
+function deleteNote(){
+    // let container = document.getElementById('add-note');
+    let nix = document.getElementById('note-array');
+console.log("hello");
     console.log(nix);
+   // nix.parentNode.removeChild(nix);
 
 }
-// function writeNote() {
-//     document.getElementById('score');
-//     score.set({time: '5/4'});
-// // in order to render the drawing, I will need to increment the time with each additional note value.
-// // system.addStave({
-// //     voices: [ score.voice(score.beam(score.notes('C5/8, C5, C5, C5')
-// //         .concat(score.notes('D5/q, D5')))) ]
-// //
-// // }).addClef('treble');
-//
-//     system.addStave({
-//         voices: [score.voice(score.notes("C4/q, D4/q, E4/q, F4/q, G4/q"))]
-//     }).addClef('treble');
-//
-//     vf.draw();
-// }
 
