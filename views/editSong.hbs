@@ -9,15 +9,16 @@
     {{#each notes}}
 
         <ul id="note-array">
-            <li>
+            <li id="noteList">
                 <input class="input" type="text" name="notes" value="{{this}}">
+<!--                <input class="button" type="button" onclick="deleteNote({{this}})">-->
             </li>
         </ul>
     {{/each}}
     <label>Pitch</label>
-    <input class="input" type="text" name="pitch" value="{{pitch}}" placeholder=""/>
+    <input class="input" type="text" name="pitch" placeholder=""/>
     <label>Rhythm</label>
-    <input class="input" type="text" name="rhythm" value="{{rhythm}}" placeholder=""/>
+    <input class="input" type="text" name="rhythm" placeholder=""/>
     <input class="button" type="submit" value="Update these Notes" onclick="addNote('{{pitch}}', '{{rhythm}}')"/>
     </form>
 <br>

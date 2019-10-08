@@ -68,12 +68,17 @@ function addNote() {
     let inputNote = document.createElement('input');
     inputNote.setAttribute('type', 'text');
     inputNote.setAttribute('name', 'notes');
-    inputNote.setRangeText(`${pitch}${rhythm}`);
+    inputNote.value = `${pitch}${rhythm}`;
     nextNote.appendChild(inputNote);
     document.getElementById('note-array').appendChild(nextNote);
     console.log(nextNote);
 }
+function deleteNote(noteList){
+    let nix = document.getElementById('noteList');
+    nix.parentNode.removeChild(nix);
+    console.log(nix);
 
+}
 // function writeNote() {
 //     document.getElementById('score');
 //     score.set({time: '5/4'});
