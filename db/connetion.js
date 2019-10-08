@@ -9,8 +9,8 @@ if (process.env.NODE_ENV === "production") {
     mongoURI = "mongodb://localhost/drawMusic";
 }
 
-mongoose.connect('mongodb://localhost/drawMusic', { useNewUrlParser: true }, () => {
-    console.log('connecting music in 3, 2, 1...');
-});
+// mongoose.connect('mongodb://localhost/drawMusic', { useNewUrlParser: true }, () => {
+//     console.log('connecting music in 3, 2, 1...');
+// });
 
 module.exports = mongoose;
