@@ -1,27 +1,34 @@
 <h2>Edit {{name}}</h2>
 
 <form action="/scores/edit/{{id}}?_method=put" method="post">
-    <p>
+    <h2> Add the pitches and rhythms </h2>
+    <h3>Please remember that the Treble Clef notes range from A3 through C6</h3>
+    <h3> Rhythm may be entered as 'h' for half note, 'q' for quarter note, and 8 for eighth notes</h3>
+<p>
+    <label>Notes</label>
+    {{#each notes}}
+
+        <ul id="note-array">
+            <li>
+                <input class="input" type="text" name="notes" value="{{this}}">
+            </li>
+        </ul>
+    {{/each}}
+    <label>Pitch</label>
+    <input class="input" type="text" name="pitch" value="{{pitch}}" placeholder=""/>
+    <label>Rhythm</label>
+    <input class="input" type="text" name="rhythm" value="{{rhythm}}" placeholder=""/>
+    <input class="button" type="submit" value="Update these Notes" onclick="addNote('{{pitch}}', '{{rhythm}}')"/>
+    </form>
+<br>
+<form action="/scores/edit/{{id}}?_method=put" method="post">
         <label>Edit Song Name</label>
         <input class="input" type="text" name="name" value="{{name}}" placeholder=""/>
         <label>Number of Beats</label>
         <input class="input" type="text" name="time_signature" value="{{time_signature}}" placeholder="Enter a whole
-number"/>
+        number"/>
     </p>
-    <h2> Add the pitches and rhythms </h2>
-    <h3>Please remember that the Treble Clef notes range from A3 through C6</h3>
-    <h3> Rhythm may be entered as 'h' for half note, 'q' for quarter note, and 8 for eighth notes</h3>
-    <p >
-        <label>Pitch</label>
-        <input id="pitch" class="input" type="text" name="pitch" placeholder="Ex: G5"/>
-        <label>Rhythm</label>
-        <input id="rhythm" class="input" type="text" name="rhythm" placeholder="Ex: /q "/>
-        <input id="add-note" class="button" type="submit" value="Add this Note"
-               onclick="addNote('{{pitch}}', '{{rhythm}}')"/>
-    </p>
-    <ul id="note-array">
 
-    </ul>
 
     <input class="button" type="submit" value="Update this Song" />
 </form>

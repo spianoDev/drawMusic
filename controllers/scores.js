@@ -39,13 +39,39 @@ router.delete("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
     Score.create(req.body).then(newScore => {
-        req.body.notes.filter(input => {return input.length > 0});
+        console.log(req.body);
         Note.create(req.body).then(newNote => {
+
             newScore.notes.push(newNote.pitch + newNote.rhythm);
+            // req.body.pitch.filter(input => {return input === ""});
+            // req.body.rhythm.filter(input => {return input === ""});
             newScore.save();
             console.log(newScore);
             res.redirect("/scores");
         })
+    })
+});
+
+// update a note inside a score
+router.put('/edit/:id', (req, res) => {
+    //req.body.notes = req.body.notes.filter(input => {return input.length > 0});
+    const scoreId = req.params.id;
+    //const takeNote = req.body.id;
+    Score.findOneAndUpdate({ _id: scoreId}, req.body)
+        .then(updateNote => {
+       // Note.insertMany(req.body.notes).then(addNote => {
+            // console.log(req.body);
+            // console.log(addNote);
+            // console.log(addNote.pitch);
+            // console.log(addNote.rhythm);
+            // console.log(addNote.pitch + addNote.rhythm);
+            //console.log(takeNote.pitch.rhythm);
+           // updateNote.notes.push(addNote.pitch + addNote.rhythm);
+           //newNote.save();
+           updateNote.save();
+           res.redirect('/scores/edit');
+          //console.log(updateNote);
+        // })
     })
 });
 // router.post('/unknown', (req, res) => {
@@ -64,28 +90,6 @@ router.post("/", (req, res) => {
 //     })
 //     })
 // });
-// update a note inside a score
-router.put('/edit/:id', (req, res) => {
-    const scoreId = req.params.id;
-    //const takeNote = req.body.id;
-    Score.findByIdAndUpdate({ _id: scoreId}, req.body.time_signature)
-        .then(updateNote => {
-        // Note.findAndModify(req.body).then(addNote => {
-        //     console.log(req.body);
-        //     console.log(addNote);
-        //     console.log(addNote.pitch);
-        //     console.log(addNote.rhythm);
-        //     console.log(addNote.pitch + addNote.rhythm);
-        //     //console.log(takeNote.pitch.rhythm);
-        //     updateNote.notes.push(addNote.pitch + addNote.rhythm);
-        //    //newNote.save();
-           updateNote.save();
-           res.redirect('/scores');
-          console.log(updateNote);
-        // })
-    })
-});
-
 
 
 module.exports = router;
