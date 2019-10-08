@@ -37,7 +37,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     Note.findOneAndDelete( { _id: req.params.id })
-        .then(note => res.json(note));
+        .then(note => res.redirect("/"));
 });
 
 module.exports = router;

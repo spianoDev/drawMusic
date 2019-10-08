@@ -74,7 +74,7 @@ function addNote() {
 }
 function deleteNote(){
     // let container = document.getElementById('add-note');
-    let nix = document.getElementById('note-array');
+    let nix = document.getElementsByClassName('notes-of-song')[0].value;
 console.log("hello");
     console.log(nix);
    // nix.parentNode.removeChild(nix);
