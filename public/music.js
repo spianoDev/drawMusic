@@ -72,12 +72,20 @@ function addNote() {
     document.getElementById('note-array').appendChild(nextNote);
     console.log(nextNote);
 }
-function deleteNote(){
+// function to delete unwanted notes inside the score notes array
+// https://stackoverflow.com/questions/19650108/how-to-delete-a-check-box-using-javascript
+function deleteNote() {
     // let container = document.getElementById('add-note');
-    let nix = document.getElementsByClassName('notes-of-song')[0].value;
-console.log("hello");
-    console.log(nix);
-   // nix.parentNode.removeChild(nix);
-
+    let notesNotNeeded = document.getElementsByClassName('notes-of-song');
+    let checkBox = document.getElementsByClassName('checkbox');
+    for (let i = 0; i < notesNotNeeded.length; i++) {
+        box = checkBox[i];
+        nixNote = notesNotNeeded[i];
+        if (box.checked) {
+            box.parentNode.removeChild(box);
+            nixNote.parentNode.removeChild(nixNote);
+            nixNote.splice(i, 1);
+        }
+    }
 }
 

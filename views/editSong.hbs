@@ -4,14 +4,15 @@
     <h2> Add the pitches and rhythms </h2>
     <h3>Please remember that the Treble Clef notes range from A3 through C6</h3>
     <h3> Rhythm may be entered as 'h' for half note, 'q' for quarter note, and 8 for eighth notes</h3>
-
+    <h3> * Note * If you want to delete a note from the song, you must select the check box, hit the delete checked
+        boxes button, and then update the notes <i>before</i> you update the song.
+    </h3>
     <label>Notes</label>
     {{#each notes}}
-
         <ul id="note-array">
             <li>
                 <input class="notes-of-song" type="text" name="notes" value="{{this}}">
-                <button class="button" type="button" onclick="deleteNote()" value="delete">
+                <input class="checkbox" type="checkbox" value="">
             </li>
         </ul>
     {{/each}}
@@ -20,7 +21,8 @@
     <label>Rhythm</label>
     <input class="input" type="text" name="rhythm" placeholder=""/>
     <input class="button" type="submit" value="Update these Notes" onclick="addNote('{{pitch}}', '{{rhythm}}')"/>
-    </form>
+    <input type="button" value="Delete checked boxes" onclick="deleteNote()"/>
+</form>
 <br>
 <form action="/scores/edit/{{id}}?_method=put" method="post">
         <label>Edit Song Name</label>
