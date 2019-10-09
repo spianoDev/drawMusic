@@ -37,4 +37,4 @@ app.listen(process.env.PORT, () => {
 // app.listen(app.get("port"), () => {
 //     console.log(`✅ PORT: ${app.get("port")} 🌟`);
 // });
-//app.listen(4000, () => console.log("Get ready to make some music on port 4000"));
+app.listen(4000, () => console.log("Get ready to make some music on port 4000"));

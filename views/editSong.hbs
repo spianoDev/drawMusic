@@ -20,8 +20,9 @@
     <input class="input" type="text" name="pitch" placeholder=""/>
     <label>Rhythm</label>
     <input class="input" type="text" name="rhythm" placeholder=""/>
+    <br>
     <input class="button" type="submit" value="Update these Notes" onclick="addNote('{{pitch}}', '{{rhythm}}')"/>
-    <input type="button" value="Delete checked boxes" onclick="deleteNote()"/>
+    <input class="button" type="button" value="Delete checked boxes" onclick="deleteNote()"/>
 </form>
 <br>
 <form action="/scores/edit/{{id}}?_method=put" method="post">

@@ -3,6 +3,8 @@
     text-align: center;
     width: 100%;
     height: 100%;
+    margin: 20px;
+    padding: 20px;
 }
 h1, h2 {
     color: #ffb600;
@@ -13,12 +15,12 @@ h1 {
     font-size: 70px;
 }
 h2{
-    font-size: 55px;
+    font-size: 60px;
 }
 h3 {
     color: #642d00;
     font-family: 'Grenze', serif;
-    font-size: 35px;
+    font-size: 24px;
 }
 .music-render {
     margin: 10px auto;
@@ -27,38 +29,73 @@ h3 {
     width: 600px;
     height: 150px;
 }
+a {
+    text-align: center;
+    box-shadow: 2px 2px 3px #642d00;
+    margin: 5px;
+    padding: 5px;
+    background-color: #ffffff;
+    text-decoration: none;
+    color: #642d00;
+}
 li {
     font-family: 'Playfair Display', serif;
-    font-size: 24px;
+    font-size: 18px;
     margin: 5px ;
     padding: 5px;
     list-style-type: none;
 }
 form {
     background-color: wheat;
-    margin: 30px 60px;
+    padding: 5px;
+    margin: 30px 30px;
+    border: 2px solid #642d00;
 }
 .input {
     float: bottom;
-    font-size: 24px;
+    font-size: 18px;
+    font-family: 'Playfair Display', serif;
     box-shadow: 2px 2px 3px #642d00;
     width: 500px;
-    height: 30px;
-    margin: 10px;
+    height: 20px;
+    margin: 5px;
     padding: 5px;
-    background-color: wheat;
+    background-color: rgba(255, 255, 255, 0.85);
     color: #642d00;
 }
 .link {
     display: block;
     margin: 40px 120px;
-    padding: 15px;
-    font-family: 'Abril Fatface', cursive;
-    font-size: 20px;
+    padding: 5px;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.85);
 }
 label {
     display: block;
-    font-family: 'Abril Fatface', cursive;
-    color: #003400;
+    font-family: 'Grenze', serif;
+    color: #642d00;
+    font-size: 24px;
+    padding: 0;
+    margin-top: 20px;
+}
+.button, .notes-of-song {
+    width: 200px;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #642d00;
+    background-color: #ffffff;
+    box-shadow: 3px 3px 3px #642d00;
+    margin: 50px 120px;
+}
+.checkbox {
+    background-color: #ffffff;
+    box-shadow: 1px 1px 1px #642d00;
+}
+input.checkbox {
+    height: 15px;
+    width: 15px;
+    padding: 0;
+    margin: 0;
 }
