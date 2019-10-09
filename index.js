@@ -4,7 +4,7 @@ const notesController = require('./controllers/notes');
 const scoresController = require('./controllers/scores');
 const parser = require('body-parser');
 const methodOverride = require('method-override');
-
+const cors = require('cors');
 const app = express();
 // to allow the music notes to render with handlebars helper
 // https://github.com/ericf/express-handlebars#helpers
@@ -22,7 +22,7 @@ app.use(parser.urlencoded({ extended: true }));
 app.use(parser.json());
 app.use(methodOverride("_method"));
 app.use("/assets", express.static('public'));
-
+app.use(cors());
 app.get("/", (req, res) => {
     res.redirect('/notes');
 });
