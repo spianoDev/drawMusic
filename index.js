@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 app.use("/scores", scoresController);
 app.use("/notes", notesController);
 
-app.set("port", process.env.PORT);
+app.set("port", process.env.PORT || 4000);
 app.listen(process.env.PORT, () => {
     console.log(`✅ PORT: ${app.get("port")} 🌟`);
 });
