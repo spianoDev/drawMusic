@@ -27,11 +27,11 @@ console.log(test().catch(() => {}) instanceof require('bluebird'));
 
 
 
-let mongoURI = "";
+let mongoURI = "let mongoURI = your-production-link";
 if (process.env.NODE_ENV === "production") {
     mongoURI = process.env.DB_URL;
 } else {
-    mongoURI = "mongodb://localhost/workout";
+    mongoURI = "mongodb://localhost/drawMusic";
 }
 
 mongoose.connect(mongoURI, {
