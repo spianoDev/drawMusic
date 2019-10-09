@@ -13,7 +13,7 @@ mongoose.Promise = Promise;
 //     console.log('connecting music in 3, 2, 1...');
 // });
 
-let mongoURI = 'mongodb+srv://sarah:abc@drawmusic-nusnj.mongodb.net/drawMusic?retryWrites=true&w=majority';
+let mongoURI = 'mongodb+srv://sarah:vN9m3QjhCHcUolge@drawmusic-nusnj.mongodb.net/drawMusic?retryWrites=true&w=majority';
 if (process.env.NODE_ENV === "production") {
     mongoURI = process.env.DB_URL;
 } else {
