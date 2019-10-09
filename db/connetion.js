@@ -27,7 +27,7 @@ console.log(test().catch(() => {}) instanceof require('bluebird'));
 
 
 
-let mongoURI = "let mongoURI = your-production-link";
+let mongoURI = "let mongoURI = mongodb+srv://test:o9cx6hSYf6ic6d3b@test-2jjim.mongodb.net/test?retryWrites=true&w=majority";
 if (process.env.NODE_ENV === "production") {
     mongoURI = process.env.DB_URL;
 } else {
