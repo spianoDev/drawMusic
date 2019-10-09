@@ -1,6 +1,14 @@
 .main {
     background-color: rgba(245, 222, 179, 0.51);
 }
-h1 {
-    color: red;
+h1, h2 {
+    color: #ffb600;
+    text-shadow: 2px 2px 5px #642d00;
+    font-family: 'Grenze', serif;
+
+}
+.music-render {
+    background-color: rgba(255, 255, 255, 0.85);
+    width: 600px;
+    height: 150px;
 }
