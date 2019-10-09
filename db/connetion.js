@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === "production") {
     mongoURI = "mongodb://localhost/drawMusic";
 }
 
-mongoose.connect('mongodb://localhost/drawMusic', {
+mongoose.connect('mongodb+srv://test:o9cx6hSYf6ic6d3b@test-2jjim.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false}, () => {
